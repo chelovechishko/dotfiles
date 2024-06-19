@@ -1,0 +1,12 @@
+--- a/browser/components/moz.build	2024-04-06 23:08:22.178801436 +0900
++++ b/browser/components/moz.build	2024-04-06 23:10:13.837856521 +0900
+# https://hg.mozilla.org/mozilla-central/file/tip/browser/components/moz.build
+@@ -48,7 +48,7 @@
+     "originattributes",
+     "pagedata",
+     "places",
+-    "pocket",
++#    "pocket",
+     "preferences",
+     "privatebrowsing",
+     "profiles",
