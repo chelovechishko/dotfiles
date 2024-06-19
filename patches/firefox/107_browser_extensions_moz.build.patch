@@ -1,0 +1,16 @@
+--- a/browser/extensions/moz.build	2020-10-01 02:41:10.000000000 +0900
++++ b/browser/extensions/moz.build	2021-10-14 19:42:04.321341122 +0900
+# https://hg.mozilla.org/mozilla-central/file/tip/browser/extensions/moz.build
+@@ -5,10 +5,11 @@
+ # file, You can obtain one at http://mozilla.org/MPL/2.0/.
+ DIRS += [
+-    "formautofill",
++#    "formautofill",
++# never disable "screenshots", as it is used in creating bookmarks in gui (so will crash)
+     "screenshots",
+     "webcompat",
+     "report-site-issue",
+-    "pictureinpicture",
++#    "pictureinpicture",
+     "search-detection",
+ ]
