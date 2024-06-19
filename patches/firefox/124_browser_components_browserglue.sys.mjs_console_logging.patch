@@ -1,0 +1,15 @@
+--- a/browser/components/BrowserGlue.sys.mjs	2024-04-14 20:19:28.458335092 +0900
++++ b/browser/components/BrowserGlue.sys.mjs	2024-04-14 20:19:44.508209057 +0900
+# https://hg.mozilla.org/mozilla-central/file/tip/browser/components/BrowserGlue.sys.mjs
+# just some browser console error about absence of
+# NS_ERROR_NOT_IMPLEMENTED: Component returned failure code: 0x80004001 (NS_ERROR_NOT_IMPLEMENTED) [nsIAppStartup.secondsSinceLastOSRestart]
+@@ -10,7 +10,7 @@
+         secondsSinceLastOSRestart
+       );
+     } catch (ex) {
+-      console.error(ex);
++      // console.error(ex);
+     }
+   },
+ 
+
