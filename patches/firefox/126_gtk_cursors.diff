@@ -1,0 +1,14 @@
+--- a/widget/gtk/nsWindow.cpp	2024-05-19 16:42:36.082617465 +0900
++++ b/widget/gtk/nsWindow.cpp	2024-05-19 16:44:08.721889702 +0900
+# https://hg.mozilla.org/mozilla-central/file/tip/widget/gtk/nsWindow.cpp
+@@ -8025,7 +8025,9 @@
+       gdkcursor = gdk_cursor_new_from_name(defaultDisplay, "text");
+       break;
+     case eCursor_hyperlink:
+-      gdkcursor = gdk_cursor_new_from_name(defaultDisplay, "pointer");
++      // gdkcursor = gdk_cursor_new_from_name(defaultDisplay, "pointer");
++      // return goold old really hyperlink cursor
++      gdkcursor = gdk_cursor_new_for_display(defaultDisplay, GDK_HAND2);
+       break;
+     case eCursor_n_resize:
+       gdkcursor = gdk_cursor_new_from_name(defaultDisplay, "n-resize");
