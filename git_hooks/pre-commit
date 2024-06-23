@@ -1,0 +1,24 @@
+#!/usr/bin/env sh
+
+# Do not forget to 'chmod u+x .git/hooks/pre-commit'.
+# Idea from
+# https://stackoverflow.com/questions/86402/how-can-i-get-git-to-follow-symlinks/18692600#18692600
+
+# 'git diff --cached' means:
+# changes between the index and your last commit;
+# what you would be committing if you run git commit without -a option.
+
+for a_file in $(git diff --cached --name-only); do
+	#if  symbolic  link   and  not link to directory
+	if [ -L "${a_file}" ] && [ ! -d "${a_file}" ]; then
+		# Annihilate git attempt to store symbolic link itself, instead of it content.
+		git rm --cached "${a_file}"
+		# 'git diff' will produce the same symbolic link itself.
+		# And apply patch only to index.
+		# Default '-p1' deletes 'b/' in 'a/b/file' (of 'diff --git'), so we need to
+		# preserve it, otherwise when we try to update file second time
+		# (first one is successful) git will bail out with
+		# "error: $a_file: already exists in index".
+		diff --text --unified /dev/null "${a_file}" | git apply --cached -p0 -
+	fi
+done
