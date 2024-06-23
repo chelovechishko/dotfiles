@@ -1,0 +1,42 @@
+#command
+# use repaint to "disable" key
+V	repaint
+e	repaint
+p	repaint
+y	repaint
+>	repaint
+=	repaint
+/	forw-search ^R
+?	back-search ^R
+# use '&' to display only matching lines
+
+# Type '-i' inside less to change case-[in]sensitiveness.
+
+#env
+# tested with version 643
+# LESS = -l # for checking, that 'less' reads it, should output error
+
+# --status-column - will always insert one character column on the left
+# -w / --hilite-unread - needless
+# -N / --LINE-NUMBERS - display line number of each line, don't need
+# --line-num-width - otherwise there will be offset for next order
+# "--use-color" should be before the colors:
+# -DC - control characters
+# -DE - errors and informational messages
+# -DM - mark letters in status column (on the left of terminal)
+# -DN - line numbers, when they are enabled
+# -DP - prompts
+# -DR - r[ight]scroll character (indicates truncated lines)
+# -DS - search results
+# -DW - highlight for '-w'
+# without '$' at the end (of colors) it will not read other "LESS" additions after that
+
+LESS = --LONG-PROMPT --RAW-CONTROL-CHARS --buffers=128 --ignore-case --line-num-width 5 --shift 5 --status-column --status-col-width 1 --use-color -DCkr$ -DErk$ -DMM-$ -DNr-$ -DPw-$ -DRmk$ -DSkr$ -DW-y$
+
+# LESSHISTFILE = -	# will neglect pasring of all below
+# LESSHISTFILE = /dev/null	# nope too
+
+# LESSSECURE = 1 # should disable use of lesskey file
+# LESSSECURE = 0 # ...but it just disable parsing whatever after
+
+# LESS += -l
