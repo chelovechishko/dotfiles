@@ -13,7 +13,7 @@ export XDG_CACHE_HOME="/tmp/.cache"
 export XDG_DATA_DIRS="/usr/share"
 export XDG_DATA_HOME="${HOME}/.local/share"
 export XCOMPOSECACHE="${HOME}/.cache/compose-cache"
-export XCOMPOSEFILE="${HOME}/.local/share/xorg/.XCompose"
+export XCOMPOSEFILE="${XDG_DATA_HOME}/xorg/.XCompose"
 
 # Not need it anymore. And gtk firstly looks at adwaita theme nevertheless.
 # export XCURSOR_PATH="${XDG_DATA_HOME}/cursors:/usr/share/cursors/xorg-x11/"
