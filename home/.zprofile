@@ -1,4 +1,4 @@
-# Read at login.
+# Read at login (after .zshenv).
 # Use 'exec zsh --login' to update settings from here.
 
 # Fucking libcanberra
@@ -10,32 +10,34 @@ export FONTCONFIG_FILE="/etc/fonts/fonts_my.conf"
 export FONTCONFIG_USE_MMAP=1
 export PAGER="less"
 export XDG_CACHE_HOME="/tmp/.cache"
+export XDG_CONFIG_HOME_mine="/home/${USER_mine}/.config"
 export XDG_DATA_DIRS="/usr/share"
 export XDG_DATA_HOME="${HOME}/.local/share"
-export XCOMPOSECACHE="${HOME}/.cache/compose-cache"
-export XCOMPOSEFILE="${XDG_DATA_HOME}/xorg/.XCompose"
+export XDG_DATA_HOME_mine="/home/${USER_mine}/.local/share"
+export XCOMPOSECACHE="/home/${USER_mine}/.cache/compose-cache"
+export XCOMPOSEFILE="${XDG_DATA_HOME_mine}/xorg/.XCompose"
 
 # Not need it anymore. And gtk firstly looks at adwaita theme nevertheless.
 # export XCURSOR_PATH="${XDG_DATA_HOME}/cursors:/usr/share/cursors/xorg-x11/"
-export XCURSOR_PATH="${XDG_DATA_HOME}/cursors"
+export XCURSOR_PATH="${XDG_DATA_HOME_mine}/cursors"
 
-export WESTON_CONFIG_FILE=${XDG_CONFIG_HOME}/weston.ini
+export WESTON_CONFIG_FILE=${XDG_CONFIG_HOME_mine}/weston.ini
 
 # Not exists at login yet.
-mkdir --parent ${XDG_CACHE_HOME}
+mkdir --parent "${XDG_CACHE_HOME}"
 if [ ! -L "${XDG_CACHE_HOME}/rofi-3.runcache" ]; then
-	ln --symbolic "${XDG_CONFIG_HOME}/rofi/rofi-3.runcache" /tmp/.cache/rofi-3.runcache
+	ln --symbolic "${XDG_CONFIG_HOME_mine}/rofi/rofi-3.runcache" "${XDG_CACHE_HOME}/rofi-3.runcache"
 fi
 if [ ! -L "${XDG_CACHE_HOME}/keepassxc" ]; then
-	ln --symbolic "${XDG_CONFIG_HOME}/keepassxc" /tmp/.cache/keepassxc
+	ln --symbolic "${XDG_CONFIG_HOME_mine}/keepassxc" "${XDG_CACHE_HOME}/keepassxc"
 fi
 
 # Dirty hack to run kakoune with configs of user even under root
 # (and do not feel the pain using default configuration).
 # It is the same directory for root too.
-export KAKOUNE_CONFIG_DIR="${XDG_CONFIG_HOME}/kak/"
+export KAKOUNE_CONFIG_DIR="${XDG_CONFIG_HOME_mine}/kak/"
 
-export LESSKEYIN="${XDG_CONFIG_HOME}/less/lesskey.source"
+export LESSKEYIN="${XDG_CONFIG_HOME_mine}/less/lesskey.source"
 # Should be here, not in 'lesskey', as it will break pasring of later options.
 export LESSHISTFILE=-
 
@@ -52,4 +54,4 @@ export QT_IM_MODULE=ibus
 
 # Fucking python
 # To disable creating ~/.python_history
-export PYTHONSTARTUP="${XDG_CONFIG_HOME}/python/.pythonrc"
+export PYTHONSTARTUP="${XDG_CONFIG_HOME_mine}/python/.pythonrc"
