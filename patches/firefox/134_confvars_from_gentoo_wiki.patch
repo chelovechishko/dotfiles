@@ -1,0 +1,14 @@
+--- a/browser/confvars.sh	2025-01-09 11:17:21.491969119 +0900
++++ b/browser/confvars.sh	2025-01-09 11:18:38.361349513 +0900
+# https://hg.mozilla.org/mozilla-central/file/tip/browser/config/mozconfigs/linux64/add-on-devel
+@@ -11,3 +11,9 @@
+ # For the mozilla-aurora repository, use "aurora".
+ MOZ_BRANDING_DIRECTORY=browser/branding/unofficial
+ MOZ_OFFICIAL_BRANDING_DIRECTORY=browser/branding/official
++
++# Disable checking that add-ons are signed by the trusted root
++# https://github.com/mozilla/positron/blob/master/build/mozconfig.common
++#MOZ_ADDON_SIGNING=0
++# Disable enforcing that add-ons are signed by the trusted root
++MOZ_REQUIRE_SIGNING=
+
