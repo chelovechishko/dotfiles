@@ -25,8 +25,8 @@ export WESTON_CONFIG_FILE=${XDG_CONFIG_HOME_mine}/weston.ini
 
 # Not exists at login yet.
 mkdir --parent "${XDG_CACHE_HOME}"
-if [ ! -L "${XDG_CACHE_HOME}/rofi-3.runcache" ]; then
-	ln --symbolic "${XDG_CONFIG_HOME_mine}/rofi/rofi-3.runcache" "${XDG_CACHE_HOME}/rofi-3.runcache"
+if [ ! -L "${XDG_CACHE_HOME}/rofi-4.runcache" ]; then
+	ln --symbolic "${XDG_CONFIG_HOME_mine}/rofi/rofi-4.runcache" "${XDG_CACHE_HOME}/rofi-4.runcache"
 fi
 if [ ! -L "${XDG_CACHE_HOME}/keepassxc" ]; then
 	ln --symbolic "${XDG_CONFIG_HOME_mine}/keepassxc" "${XDG_CACHE_HOME}/keepassxc"
@@ -40,6 +40,9 @@ export KAKOUNE_CONFIG_DIR="${XDG_CONFIG_HOME_mine}/kak/"
 export LESSKEYIN="${XDG_CONFIG_HOME_mine}/less/lesskey.source"
 # Should be here, not in 'lesskey', as it will break pasring of later options.
 export LESSHISTFILE=-
+
+# Disable processing of exclamation marks in filenames (INTERACTIVE_COMMENTS).
+set -K
 
 # Make ibus great again (it still will not be great).
 export IBUS_ENABLE_CONTROL_SHIFT_U=1
