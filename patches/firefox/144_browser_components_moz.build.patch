@@ -1,7 +1,7 @@
---- a/browser/components/moz.build	2025-01-08 23:32:24.670494048 +0900
-+++ b/browser/components/moz.build	2025-01-08 23:38:25.237574622 +0900
+--- a/browser/components/moz.build	2025-10-20 02:27:50.805946188 +0900
++++ b/browser/components/moz.build	2025-10-20 02:29:33.455183256 +0900
 # https://hg.mozilla.org/mozilla-central/file/tip/browser/components/moz.build
-@@ -40,6 +40,8 @@
+@@ -39,6 +39,8 @@
      "downloads",
      "enterprisepolicies",
      "extensions",
@@ -9,11 +9,19 @@
 +    # or not, need someday to check ('cause it should be because of shopping, but who knows). Got also firefoxview icon around tabbar with it commented out, and not such thing without it, so could be
      "firefoxview",
      "genai",
-     "messagepreview",
-@@ -65,8 +67,8 @@
-     "syncedtabs",
+     "ipprotection",
+@@ -57,6 +59,7 @@
+     "protocolhandler",
+     "reportbrokensite",
+     "resistfingerprinting",
++    # never disable this thing (needed for tabs to work properly)
+     "screenshots",
+     "search",
+     "security",
+@@ -67,8 +70,8 @@
      "tabbrowser",
      "tabunloader",
+     "taskbartabs",
 -    "textrecognition",
 -    "topsites",
 +    # "textrecognition",
@@ -21,4 +29,3 @@
      "translations",
      "uitour",
      "urlbar",
-
