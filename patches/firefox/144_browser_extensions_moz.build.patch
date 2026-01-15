@@ -1,0 +1,16 @@
+--- a/browser/extensions/moz.build	2025-10-20 02:34:03.363172626 +0900
++++ b/browser/extensions/moz.build	2025-10-20 02:34:18.553059493 +0900
+# https://hg.mozilla.org/mozilla-central/file/tip/browser/extensions/moz.build
+@@ -6,10 +6,10 @@
+ 
+ DIRS += [
+     "data-leak-blocker",
+-    "formautofill",
++    # "formautofill",
+     "ipp-activator",
+     "webcompat",
+-    "pictureinpicture",
++    # "pictureinpicture",
+     "search-detection",
+     "newtab",
+ ]
