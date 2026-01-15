@@ -25,15 +25,6 @@ fi
 # export QT_QPA_PLATFORM=wayland
 export QT_QPA_PLATFORMTHEME=qt5ct
 
-export __GL_SHADER_DISK_CACHE=1
-# https://us.download.nvidia.com/XFree86/Linux-x86/180.22/README/chapter-11.html
-# __GL_YIELD = NOTHING USLEEP unset
-#__GL_YIELD=USLEEP
-# export __GL_THREADED_OPTIMIZATIONS=1
-export __GL_WRITE_TEXT_SECTION=1
-export __GL_IGNORE_GLSL_EXT_REQS=1
-# export __GL_SYNC_TO_VBLANK=0
-
 export W_CACHE="/media/t3/Games/winetricks"
 
 # Use "--literal" for 'ls' alias in .zshrc
